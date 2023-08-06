@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Find Your Zodiac Crystal</title>
+</head>
+<body>
+
+<h3>Find out a perfect crystal for yourself based on your zodiac sign!</h3>
+
+<form>
+  <label for="zodiacSign">What is your zodiac sign?</label>
+  <select id="zodiacSign" name="zodiacSign">
+    <option value="Aries">Aries</option>
+    <option value="Taurus">Taurus</option>
+    <option value="Gemini">Gemini</option>
+    <option value="Cancer">Cancer</option>
+    <option value="Leo">Leo</option>
+    <option value="Virgo">Virgo</option>
+    <option value="Libra">Libra</option>
+    <option value="Scorpio">Scorpio</option>
+    <option value="Sagittarius">Sagittarius</option>
+    <option value="Capricorn">Capricorn</option>
+    <option value="Aquarius">Aquarius</option>
+    <option value="Pisces">Pisces</option>
+  </select>
+</form>
+
+<div id="crystalDisplay"></div>
+
+<script>
+  document.getElementById('zodiacSign').addEventListener('change', function() {
+    const selectedZodiac = this.value;
+
+    const crystalAssociations = {
+      Aries: 'Bloodstone, Carnelian, Red Jasper',
+      Taurus: 'Rose Quartz, Emerald, Green Aventurine',
+      Gemini: 'Citrine, Agate, Clear Quartz',
+      Cancer: 'Moonstone, Pearl, Aquamarine',
+      Leo: 'Sunstone, Tiger\'s Eye, Amber',
+      Virgo: 'Amazonite, Blue Lace Agate, Peridot',
+      Libra: 'Lapis Lazuli, Rose Quartz, Opal',
+      Scorpio: 'Black Obsidian, Malachite, Labradorite',
+      Sagittarius: 'Sodalite, Turquoise, Labradorite',
+      Capricorn: 'Garnet, Black Onyx, Fluorite',
+      Aquarius: 'Amethyst, Aquamarine, Labradorite',
+      Pisces: 'Aquamarine, Amethyst, Moonstone',
+    };
+
+    const crystalDisplay = document.getElementById('crystalDisplay');
+    crystalDisplay.textContent = `A perfect crystal for ${selectedZodiac} is: ${crystalAssociations[selectedZodiac]}`;
+  });
+</script>
+
+</body>
+</html>
